@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cherry Blog</title><link>https://example.com/</link><description>My blog about tech and mostly emacs</description><atom:link href="https://example.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:cherry.ramatis@gmail.com"&gt;Cherry&lt;/a&gt; </copyright><lastBuildDate>Tue, 21 Jul 2020 20:26:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Emacs as a Java IDE</title><link>https://example.com/posts/emacs-as-a-java-ide/</link><dc:creator>Cherry</dc:creator><description>&lt;div id="outline-container-orgd82326e" class="outline-2"&gt;
+&lt;h2 id="orgd82326e"&gt;Introduction&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd82326e"&gt;
+&lt;p&gt;
+Historically java developers was dominated by IDEs and heavy programs(AKA jetbrains stuffs),
+but now with the lsp-mode for emacs, we have an easy to setup and power engine to produce java code
+with all others IDEs offers, like autocompletion, go to definition, code actions, refactor options
+and something that IDEs don't have, &lt;b&gt;A powerful keyboard center experience and high extensibility&lt;/b&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org44681cb" class="outline-2"&gt;
+&lt;h2 id="org44681cb"&gt;Setting Emacs for basic usage&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org44681cb"&gt;
+&lt;p&gt;
+I'll assume you don't know anything about emacs and want to know about this wonderful
+elisp interpreter.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org79e33dd" class="outline-3"&gt;
+&lt;h3 id="org79e33dd"&gt;Installing&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org79e33dd"&gt;
+&lt;p&gt;
+First, to install emacs is simple enough to install with your package manager
+&lt;/p&gt;
+
+&lt;p&gt;
+For Ubuntu/Debian based distros:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   sudo apt-get install emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+For Arch based distros:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   sudo pacman -S emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+For OSX:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   brew cask install emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+If you use other system, see in this link: &lt;a href="https://www.gnu.org/software/emacs/download.html"&gt;https://www.gnu.org/software/emacs/download.html&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org8a7bf5e" class="outline-3"&gt;
+&lt;h3 id="org8a7bf5e"&gt;Basic settings&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8a7bf5e"&gt;
+&lt;p&gt;
+Emacs default is quite ugly, like &lt;b&gt;trust me&lt;/b&gt; it's ugly
+&lt;img src="https://example.com/images/emacs-default.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+So let's make this look nicer and also learn some cool things about emacs.
+First open emacs and type &lt;code&gt;C-x C-f&lt;/code&gt; where C is shortcut for Control(Ctrl), this
+brings you a minibuffer on the bottom where you can find files, type &lt;code&gt;~/.emacs.d/init.el&lt;/code&gt;
+and hit Enter &lt;i&gt;this is your main config file&lt;/i&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+Now let's prettify a little bit this editor, write this in the file:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;scroll-bar-mode&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;tool-bar-mode&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;menu-bar-mode&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;ring-bell-function&lt;/span&gt; &lt;span class="ss"&gt;'ignore&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;locale-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-terminal-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-keyboard-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-selection-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;prefer-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+To make this apply, press &lt;code&gt;M-x&lt;/code&gt; where M stands for the Alt Key, type &lt;i&gt;eval-buffer&lt;/i&gt; and press Enter
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><guid>https://example.com/posts/emacs-as-a-java-ide/</guid><pubDate>Tue, 21 Jul 2020 19:46:48 GMT</pubDate></item></channel></rss>
