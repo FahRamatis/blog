@@ -6,35 +6,35 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>http://framatis.com/cherry-blog/</loc>
+  <loc>http://framatis.com/blog/</loc>
   <lastmod>2020-07-21T19:47:00Z</lastmod>
  </url>
  <url>
-  <loc>http://framatis.com/cherry-blog/2020/</loc>
+  <loc>http://framatis.com/blog/2020/</loc>
   <lastmod>2020-07-21T19:47:00Z</lastmod>
  </url>
  <url>
-  <loc>http://framatis.com/cherry-blog/archive.html</loc>
-  <lastmod>2020-07-21T20:50:00Z</lastmod>
+  <loc>http://framatis.com/blog/archive.html</loc>
+  <lastmod>2020-07-21T20:56:00Z</lastmod>
  </url>
  <url>
-  <loc>http://framatis.com/cherry-blog/categories/</loc>
+  <loc>http://framatis.com/blog/categories/</loc>
   <lastmod>2020-07-21T19:47:00Z</lastmod>
  </url>
  <url>
-  <loc>http://framatis.com/cherry-blog/categories/emacs/</loc>
+  <loc>http://framatis.com/blog/categories/emacs/</loc>
   <lastmod>2020-07-21T19:47:00Z</lastmod>
  </url>
  <url>
-  <loc>http://framatis.com/cherry-blog/galleries/</loc>
+  <loc>http://framatis.com/blog/galleries/</loc>
   <lastmod>2020-07-21T18:59:00Z</lastmod>
  </url>
  <url>
-  <loc>http://framatis.com/cherry-blog/listings/</loc>
+  <loc>http://framatis.com/blog/listings/</loc>
   <lastmod>2020-07-21T18:59:00Z</lastmod>
  </url>
  <url>
-  <loc>http://framatis.com/cherry-blog/posts/emacs-as-a-java-ide/</loc>
+  <loc>http://framatis.com/blog/posts/emacs-as-a-java-ide/</loc>
   <lastmod>2020-07-21T19:47:00Z</lastmod>
  </url>
 </urlset>
