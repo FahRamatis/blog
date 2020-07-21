@@ -1,4 +1,4 @@
-Sitemap: http://framatis.com/cherry-blog/sitemapindex.xml
+Sitemap: http://framatis.com/blog/sitemapindex.xml
 
 User-Agent: *
 Host: framatis.com
