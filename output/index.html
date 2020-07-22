@@ -48,9 +48,9 @@
             <p class="dateline"><a href="posts/emacs-as-a-java-ide/" rel="bookmark"><time class="post-date published dt-published" datetime="2020-07-21T16:46:48-03:00" title="2020-07-21 16:46">2020-07-21 16:46</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <div id="outline-container-orgd82326e" class="outline-2">
-<h2 id="orgd82326e">Introduction</h2>
-<div class="outline-text-2" id="text-orgd82326e">
+    <div id="outline-container-orgd716468" class="outline-2">
+<h2 id="orgd716468">Introduction</h2>
+<div class="outline-text-2" id="text-orgd716468">
 <p>
 Historically java developers was dominated by IDEs and heavy programs(AKA jetbrains stuffs),
 but now with the lsp-mode for emacs, we have an easy to setup and power engine to produce java code
@@ -60,18 +60,18 @@ and something that IDEs don't have, <b>A powerful keyboard center experience and
 </div>
 </div>
 
-<div id="outline-container-org44681cb" class="outline-2">
-<h2 id="org44681cb">Setting Emacs for basic usage</h2>
-<div class="outline-text-2" id="text-org44681cb">
+<div id="outline-container-org156089d" class="outline-2">
+<h2 id="org156089d">Setting Emacs for basic usage</h2>
+<div class="outline-text-2" id="text-org156089d">
 <p>
 I'll assume you don't know anything about emacs and want to know about this wonderful
 elisp interpreter.
 </p>
 </div>
 
-<div id="outline-container-org79e33dd" class="outline-3">
-<h3 id="org79e33dd">Installing</h3>
-<div class="outline-text-3" id="text-org79e33dd">
+<div id="outline-container-orgb24821f" class="outline-3">
+<h3 id="orgb24821f">Installing</h3>
+<div class="outline-text-3" id="text-orgb24821f">
 <p>
 First, to install emacs is simple enough to install with your package manager
 </p>
@@ -100,9 +100,9 @@ If you use other system, see in this link: <a href="https://www.gnu.org/software
 </div>
 </div>
 
-<div id="outline-container-org8a7bf5e" class="outline-3">
-<h3 id="org8a7bf5e">Basic settings</h3>
-<div class="outline-text-3" id="text-org8a7bf5e">
+<div id="outline-container-orgbd3e838" class="outline-3">
+<h3 id="orgbd3e838">Basic settings</h3>
+<div class="outline-text-3" id="text-orgbd3e838">
 <p>
 Emacs default is quite ugly, like <b>trust me</b> it's ugly
 <img src="images/emacs-default.png" alt="nil"></p>
@@ -130,6 +130,251 @@ Now let's prettify a little bit this editor, write this in the file:
 
 <p>
 To make this apply, press <code>M-x</code> where M stands for the Alt Key, type <i>eval-buffer</i> and press Enter
+Now you must have an easier and more enjoyable environment.
+<img src="images/emacs-little-config.png" alt="nil"></p>
+</div>
+</div>
+
+<div id="outline-container-org8fe9741" class="outline-3">
+<h3 id="org8fe9741">Setting use-package</h3>
+<div class="outline-text-3" id="text-org8fe9741">
+<p>
+You remember I said that emacs has a <b>huge</b> amount of packages? Handle installation of all this packages it's madness, so to make our lifes easier let's setup <i>use-package</i>, use-package it's basically a package to help you install packages, <b>yeah, emacs is incredible</b>
+</p>
+
+<p>
+Write this in your <code>init.el</code>
+</p>
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">require</span> <span class="ss">'package</span><span class="p">)</span>
+   <span class="p">(</span><span class="nf">setq</span> <span class="nv">package-enable-at-startup</span> <span class="nv">nil</span><span class="p">)</span> <span class="c1">; dont do it immediately</span>
+   <span class="p">(</span><span class="nf">setq</span> <span class="nv">package-archives</span> <span class="o">'</span><span class="p">((</span><span class="s">"org"</span>       <span class="o">.</span> <span class="s">"http://orgmode.org/elpa/"</span><span class="p">)</span>
+		<span class="p">(</span><span class="s">"gnu"</span>       <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
+		<span class="p">(</span><span class="s">"melpa"</span>     <span class="o">.</span> <span class="s">"https://melpa.org/packages/"</span><span class="p">)))</span>
+   <span class="p">(</span><span class="nf">package-initialize</span><span class="p">)</span>
+
+   <span class="c1">;; Bootstrap use-package</span>
+   <span class="p">(</span><span class="nf">unless</span> <span class="p">(</span><span class="nf">package-installed-p</span> <span class="ss">'use-package</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">package-refresh-contents</span><span class="p">)</span> <span class="c1">; update archives</span>
+     <span class="p">(</span><span class="nf">package-install</span> <span class="ss">'use-package</span><span class="p">))</span> <span class="c1">; grab the newest use-package</span>
+
+   <span class="c1">;; Define packages</span>
+   <span class="p">(</span><span class="nf">require</span> <span class="ss">'use-package</span><span class="p">)</span>
+
+   <span class="c1">;; Always download if not available</span>
+   <span class="p">(</span><span class="nf">setq</span> <span class="nv">use-package-always-ensure</span> <span class="nv">t</span><span class="p">)</span>
+</pre></div>
+
+<p>
+Congrats! Now let's install the packages that you need for a beautiful experience
+</p>
+</div>
+</div>
+<div id="outline-container-org5c3a1c1" class="outline-3">
+<h3 id="org5c3a1c1">First theme</h3>
+<div class="outline-text-3" id="text-org5c3a1c1">
+<p>
+Let's install the darcula theme to make you feel like you're on IntelliJ
+</p>
+
+<p>
+We'll use <code>use-package</code> to install our theme and the function <code>load-theme</code> to apply that.
+Write this in your <code>init.el</code>
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">idea-darkula-theme</span>
+     <span class="nv">:config</span>
+     <span class="p">(</span><span class="nf">load-theme</span> <span class="ss">'idea-darkula</span> <span class="nv">t</span><span class="p">))</span>
+</pre></div>
+
+<p>
+Beautiful editor! <img src="images/emacs-darcula.png" alt="nil"></p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga3428fa" class="outline-2">
+<h2 id="orga3428fa">Java Setup</h2>
+<div class="outline-text-2" id="text-orga3428fa">
+</div>
+<div id="outline-container-org69276a7" class="outline-3">
+<h3 id="org69276a7">AutoCompletion, Code Action, ….</h3>
+<div class="outline-text-3" id="text-org69276a7">
+<p>
+Finally let's step by step configuring our basic java usage. The main package it's lsp-mode and all the other packages work surround it's functionality.
+</p>
+
+<p>
+Write this in your <code>init.el</code>
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">lsp-mode</span>
+   <span class="nv">:ensure</span> <span class="nv">t</span>
+   <span class="nv">:init</span> <span class="p">(</span><span class="nf">setq</span> <span class="nv">lsp-keymap-prefix</span> <span class="s">"C-c l"</span><span class="p">)</span>
+   <span class="nv">:hook</span> <span class="p">(</span>
+	  <span class="p">(</span><span class="nf">java-mode</span> <span class="o">.</span> <span class="nv">lsp</span><span class="p">)</span>
+	  <span class="p">(</span><span class="nf">lsp-mode</span> <span class="o">.</span> <span class="nv">lsp-enable-which-key-integration</span><span class="p">))</span>
+   <span class="nv">:commands</span> <span class="nv">lsp</span><span class="p">)</span>
+</pre></div>
+
+<p>
+Now we need two packages to handle autocompletion part.
+First <code>company-mode</code>
+</p>
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">company</span>
+     <span class="nv">:init</span>
+     <span class="p">(</span><span class="nf">setq</span> <span class="nv">company-dabbrev-downcase</span> <span class="mi">0</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">setq</span> <span class="nv">company-idle-delay</span> <span class="mi">0</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">setq</span> <span class="nv">company-selection-wrap-around</span> <span class="nv">t</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">company-tng-configure-default</span><span class="p">)</span>
+     <span class="nv">:config</span>
+     <span class="p">(</span><span class="nf">global-company-mode</span><span class="p">))</span>
+</pre></div>
+
+<p>
+And second, an lsp integration with company
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">company-lsp</span>
+     <span class="nv">:ensure</span> <span class="nv">t</span>
+     <span class="nv">:after</span> <span class="nv">lsp</span><span class="p">)</span>
+</pre></div>
+
+<p>
+We're close to configure all :D, it's only missing two packages.
+</p>
+
+<p>
+This package give us the code actions in a nice popup menu like IDEs.
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">lsp-ui</span>
+     <span class="nv">:ensure</span> <span class="nv">t</span>
+     <span class="nv">:config</span>
+     <span class="p">(</span><span class="nf">setq</span> <span class="nv">lsp-prefer-flymake</span> <span class="nv">nil</span>
+	   <span class="nv">lsp-ui-doc-delay</span> <span class="mf">5.0</span>
+	   <span class="nv">lsp-ui-sideline-enable</span> <span class="nv">nil</span>
+	   <span class="nv">lsp-ui-sideline-show-symbol</span> <span class="nv">nil</span><span class="p">))</span>
+   <span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">"M-RET"</span><span class="p">)</span> <span class="ss">'lsp-execute-code-action</span><span class="p">)</span>
+</pre></div>
+
+<p>
+Finally we'll install <code>lsp-java</code>, a integration with lsp-mode for java(remember lsp-mode work with a lot of languages, that's why we need to install specific package like lsp-java)
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">lsp-java</span>
+     <span class="nv">:ensure</span> <span class="nv">t</span>
+     <span class="nv">:init</span>
+     <span class="p">(</span><span class="nf">setq</span> <span class="nv">lsp-java-vmargs</span>
+	   <span class="p">(</span><span class="nf">list</span>
+	    <span class="s">"-noverify"</span>
+	    <span class="s">"-Xmx2G"</span>
+	    <span class="s">"-XX:+UseG1GC"</span>
+	    <span class="s">"-XX:+UseStringDeduplication"</span>
+	    <span class="s">"-javaagent:/home/cherry/development/lombok.jar"</span>
+	    <span class="p">)</span>
+
+	   <span class="nv">lsp-java-save-action-organize-imports</span> <span class="nv">nil</span>
+
+	   <span class="nv">lsp-java-java-path</span> <span class="s">"/usr/bin/java"</span>
+	   <span class="p">)</span>
+     <span class="nv">:config</span>
+     <span class="p">(</span><span class="nf">add-hook</span> <span class="ss">'java-mode-hook</span> <span class="o">#</span><span class="ss">'lsp</span><span class="p">))</span>
+</pre></div>
+
+<p>
+This is the only package you need to provide your informations, on the sentence <b>-javaagent</b> you need to provide the location of your lombok jar, if you don't have just install on this link: <a href="https://projectlombok.org/download">https://projectlombok.org/download</a>
+And for the variable <b>lsp-java-java-path</b> you put the location for java binary in your system, you can discover this running on your terminal:
+</p>
+
+<div class="highlight"><pre><span></span>   whereis java
+</pre></div>
+
+<pre class="example">
+java: /usr/bin/java /usr/share/java /usr/share/man/man1/java.1.gz
+
+</pre>
+
+<p>
+In this output you copy the <i><i>/usr/bin</i></i> stuff
+</p>
+</div>
+</div>
+<div id="outline-container-org41f742f" class="outline-3">
+<h3 id="org41f742f">Optional debugger</h3>
+<div class="outline-text-3" id="text-org41f742f">
+<p>
+I personally don't use the debugger a lot(javascript developer addiction), but I know a lot of senior java developer like this function, so to get you covered let's install a debugger package
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">dap-mode</span>
+     <span class="nv">:ensure</span> <span class="nv">t</span>
+     <span class="nv">:after</span> <span class="nv">lsp-mode</span>
+     <span class="nv">:config</span>
+     <span class="p">(</span><span class="nf">dap-mode</span> <span class="nv">t</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">dap-ui-mode</span> <span class="nv">t</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">dap-tooltip-mode</span> <span class="mi">1</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">tooltip-mode</span> <span class="mi">1</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">dap-register-debug-template</span>
+      <span class="s">"localhost:5005"</span>
+      <span class="p">(</span><span class="nb">list </span><span class="nv">:type</span> <span class="s">"java"</span>
+	    <span class="nv">:request</span> <span class="s">"attach"</span>
+	    <span class="nv">:hostName</span> <span class="s">"localhost"</span>
+	    <span class="nv">:port</span> <span class="mi">5005</span><span class="p">))</span>
+     <span class="p">(</span><span class="nf">dap-register-debug-template</span>
+      <span class="s">"10.186.38.171:5005"</span>
+      <span class="p">(</span><span class="nb">list </span><span class="nv">:type</span> <span class="s">"java"</span>
+	    <span class="nv">:request</span> <span class="s">"attach"</span>
+	    <span class="nv">:hostName</span> <span class="s">"10.186.38.171"</span>
+	    <span class="nv">:port</span> <span class="mi">5005</span><span class="p">))</span>
+     <span class="p">)</span>
+</pre></div>
+
+<p>
+And the specific package for java
+</p>
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">dap-java</span>
+     <span class="nv">:ensure</span> <span class="nv">nil</span>
+     <span class="nv">:after</span> <span class="p">(</span><span class="nf">lsp-java</span><span class="p">)</span>
+     <span class="nv">:config</span>
+     <span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">"&lt;f7&gt;"</span><span class="p">)</span> <span class="ss">'dap-step-in</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'dap-next</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">"&lt;f9&gt;"</span><span class="p">)</span> <span class="ss">'dap-continue</span><span class="p">)</span>
+     <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div id="outline-container-org32a32e9" class="outline-3">
+<h3 id="org32a32e9">File Tree vision</h3>
+<div class="outline-text-3" id="text-org32a32e9">
+<p>
+<code>Treemacs</code> is an wonderful package that provide a file list view(like IDEs) and also integrates beautifully with lsp-mode to list packages and functions like Eclipse, let's install it
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">treemacs</span>
+     <span class="nv">:init</span>
+     <span class="p">(</span><span class="nf">add-hook</span> <span class="ss">'treemacs-mode-hook</span>
+	       <span class="p">(</span><span class="k">lambda </span><span class="p">()</span> <span class="p">(</span><span class="nf">treemacs-resize-icons</span> <span class="mi">15</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div id="outline-container-org8be44a5" class="outline-3">
+<h3 id="org8be44a5">Project management</h3>
+<div class="outline-text-3" id="text-org8be44a5">
+<p>
+   One thing that I love about emacs it's how fast you can move between different projects and fuzzy find files inside the project you working on, the package that do this is called <code>projectile</code>
+let's install it and configure
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="p">(</span><span class="nf">use-package</span> <span class="nv">projectile</span>
+    <span class="nv">:defer</span> <span class="mi">1</span>
+    <span class="nv">:init</span>
+    <span class="p">(</span><span class="nf">setq</span> <span class="nv">projectile-completion-system</span> <span class="ss">'ivy</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">projectile-mode</span> <span class="nv">+1</span><span class="p">)</span>
+    <span class="nv">:bind</span> <span class="p">((</span><span class="s">"C-c p"</span> <span class="o">.</span> <span class="nv">projectile-command-map</span><span class="p">)</span>
+	   <span class="p">(</span><span class="s">"C-."</span> <span class="o">.</span> <span class="nv">projectile-find-file</span><span class="p">)))</span>
+</pre></div>
+
+<p>
+This basically make <code>C-c p</code> switch between projects and <code>C-.</code> fuzzy find files inside project
 </p>
 </div>
 </div>
