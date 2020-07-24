@@ -106,11 +106,32 @@
    #+END_SRC
 
    Beautiful editor! [[img-url:/images/emacs-darcula.png]]
+** Useful package for beginners and advanced
+   There's a package called =which-key= that helps a *lot* to memorize emacs keybindings as you go, basically it provide a minibuffer showing you the options for you initial key press.
+
+   Talk is cheap, I'll show you the code and give images to the functionalitty.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package which-key
+       :init
+       (which-key-mode)
+       :config
+       (which-key-setup-side-window-bottom)
+       (setq which-key-sort-order 'which-key-key-order-alpha
+	     which-key-side-window-max-width 0.33
+	     which-key-idle-delay 0.7
+	     which-key-idle-secondary-delay 0.35)
+       :diminish which-key-mode)
+   #+END_SRC
+
+   Tell me, it's pretty cool and useful right? You'll love as more you use, trust me.
+
+   [[img-url:/images/emacs-whichkey.png]]
 * Java Setup
 ** AutoCompletion, Code Action, ....
    Finally let's step by step configuring our basic java usage. The main package it's lsp-mode and all the other packages work surround it's functionality.
 
-   Write this in your =init.el=
+   Write this in your =init.el=, it's basically the installation and setting a keybind to all language specific features
 
    #+BEGIN_SRC emacs-lisp
     (use-package lsp-mode
@@ -145,7 +166,7 @@
 
    We're close to configure all :D, it's only missing two packages.
 
-   This package give us the code actions in a nice popup menu like IDEs.
+   This package give us the code actions in a nice popup menu like IDEs, we'll install it and set the keybind =M-RET= to trigget the popup menu of code actions, M stands for Alt and RET for Enter
 
    #+BEGIN_SRC emacs-lisp
     (use-package lsp-ui
@@ -233,15 +254,23 @@
 ** File Tree vision
    =Treemacs= is an wonderful package that provide a file list view(like IDEs) and also integrates beautifully with lsp-mode to list packages and functions like Eclipse, let's install it
 
+   In this piece of code, we're installing the package =treemacs= and binding it's toggle to the key =f8=
+
    #+BEGIN_SRC emacs-lisp
      (use-package treemacs
        :init
        (add-hook 'treemacs-mode-hook
-		 (lambda () (treemacs-resize-icons 15))))
+		 (lambda () (treemacs-resize-icons 15)))
+       :config
+       (global-set-key [f8] 'treemacs)
+       )
    #+END_SRC
 ** Project management
    One thing that I love about emacs it's how fast you can move between different projects and fuzzy find files inside the project you working on, the package that do this is called =projectile=
 let's install it and configure
+
+
+  In this piece, we're basically installing the package =projectile= and binding the function to switch between projects to =C-c p= and the function to search files inside projects to =C-.=
 
   #+BEGIN_SRC emacs-lisp
     (use-package projectile
@@ -252,5 +281,9 @@ let's install it and configure
       :bind (("C-c p" . projectile-command-map)
 	     ("C-." . projectile-find-file)))
   #+END_SRC
+* Finish
+  Well, that's the basic setup you need to simulate an entire experience similar to other IDEs like IntelliJ and Eclipse. Obviously I can't show you all that emacs can do and even what lsp-mode can do, so i'll provide links for resources and please contact me for help, will be a pleasure talk with you about emacs!
 
-  This basically make =C-c p= switch between projects and =C-.= fuzzy find files inside project
+  Lsp-mode documentation: https://emacs-lsp.github.io/lsp-mode/
+  Lsp-java section of documentation: https://emacs-lsp.github.io/lsp-java/
+  Video demonstration of this "stack" on emacs conf: https://www.youtube.com/watch?v=Bbjxn9yVNJ8
