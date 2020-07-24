@@ -27,7 +27,6 @@
     <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">Archive</a>
         <a class="sidebar-nav-item" href="../../categories/">Tags</a>
         <a class="sidebar-nav-item" href="../../rss.xml">RSS feed</a>
-        <a class="sidebar-nav-item" href="../../contact.html">Contact Me</a>
     
     
     </nav>
@@ -58,9 +57,9 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-orgd24dd09" class="outline-2">
-<h2 id="orgd24dd09">Introduction</h2>
-<div class="outline-text-2" id="text-orgd24dd09">
+    <div id="outline-container-org8e7c5bf" class="outline-2">
+<h2 id="org8e7c5bf">Introduction</h2>
+<div class="outline-text-2" id="text-org8e7c5bf">
 <p>
 Historically java developers was dominated by IDEs and heavy programs(AKA jetbrains stuffs),
 but now with the lsp-mode for emacs, we have an easy to setup and power engine to produce java code
@@ -70,18 +69,18 @@ and something that IDEs don't have, <b>A powerful keyboard center experience and
 </div>
 </div>
 
-<div id="outline-container-orgdd02e37" class="outline-2">
-<h2 id="orgdd02e37">Setting Emacs for basic usage</h2>
-<div class="outline-text-2" id="text-orgdd02e37">
+<div id="outline-container-orgd3bc448" class="outline-2">
+<h2 id="orgd3bc448">Setting Emacs for basic usage</h2>
+<div class="outline-text-2" id="text-orgd3bc448">
 <p>
 I'll assume you don't know anything about emacs and want to know about this wonderful
 elisp interpreter.
 </p>
 </div>
 
-<div id="outline-container-orgc775073" class="outline-3">
-<h3 id="orgc775073">Installing</h3>
-<div class="outline-text-3" id="text-orgc775073">
+<div id="outline-container-org601f16d" class="outline-3">
+<h3 id="org601f16d">Installing</h3>
+<div class="outline-text-3" id="text-org601f16d">
 <p>
 First, to install emacs is simple enough to install with your package manager
 </p>
@@ -110,9 +109,9 @@ If you use other system, see in this link: <a href="https://www.gnu.org/software
 </div>
 </div>
 
-<div id="outline-container-org1f15c12" class="outline-3">
-<h3 id="org1f15c12">Basic settings</h3>
-<div class="outline-text-3" id="text-org1f15c12">
+<div id="outline-container-org9288649" class="outline-3">
+<h3 id="org9288649">Basic settings</h3>
+<div class="outline-text-3" id="text-org9288649">
 <p>
 Emacs default is quite ugly, like <b>trust me</b> it's ugly
 <img src="../../images/emacs-default.png" alt="nil"></p>
@@ -145,9 +144,9 @@ Now you must have an easier and more enjoyable environment.
 </div>
 </div>
 
-<div id="outline-container-orgd07134a" class="outline-3">
-<h3 id="orgd07134a">Setting use-package</h3>
-<div class="outline-text-3" id="text-orgd07134a">
+<div id="outline-container-orgd47b646" class="outline-3">
+<h3 id="orgd47b646">Setting use-package</h3>
+<div class="outline-text-3" id="text-orgd47b646">
 <p>
 You remember I said that emacs has a <b>huge</b> amount of packages? Handle installation of all this packages it's madness, so to make our lifes easier let's setup <i>use-package</i>, use-package it's basically a package to help you install packages, <b>yeah, emacs is incredible</b>
 </p>
@@ -179,9 +178,9 @@ Congrats! Now let's install the packages that you need for a beautiful experienc
 </p>
 </div>
 </div>
-<div id="outline-container-org975b5d7" class="outline-3">
-<h3 id="org975b5d7">First theme</h3>
-<div class="outline-text-3" id="text-org975b5d7">
+<div id="outline-container-orgcfdfc84" class="outline-3">
+<h3 id="orgcfdfc84">First theme</h3>
+<div class="outline-text-3" id="text-orgcfdfc84">
 <p>
 Let's install the darcula theme to make you feel like you're on IntelliJ
 </p>
@@ -200,9 +199,9 @@ Write this in your <code>init.el</code>
 Beautiful editor! <img src="../../images/emacs-darcula.png" alt="nil"></p>
 </div>
 </div>
-<div id="outline-container-org209c4ef" class="outline-3">
-<h3 id="org209c4ef">Useful package for beginners and advanced</h3>
-<div class="outline-text-3" id="text-org209c4ef">
+<div id="outline-container-org100a118" class="outline-3">
+<h3 id="org100a118">Useful package for beginners and advanced</h3>
+<div class="outline-text-3" id="text-org100a118">
 <p>
 There's a package called <code>which-key</code> that helps a <b>lot</b> to memorize emacs keybindings as you go, basically it provide a minibuffer showing you the options for you initial key press.
 </p>
@@ -232,13 +231,13 @@ Tell me, it's pretty cool and useful right? You'll love as more you use, trust m
 </div>
 </div>
 </div>
-<div id="outline-container-org40a0f34" class="outline-2">
-<h2 id="org40a0f34">Java Setup</h2>
-<div class="outline-text-2" id="text-org40a0f34">
+<div id="outline-container-org49fdf91" class="outline-2">
+<h2 id="org49fdf91">Java Setup</h2>
+<div class="outline-text-2" id="text-org49fdf91">
 </div>
-<div id="outline-container-org3c332ab" class="outline-3">
-<h3 id="org3c332ab">AutoCompletion, Code Action, ….</h3>
-<div class="outline-text-3" id="text-org3c332ab">
+<div id="outline-container-orgc5996c8" class="outline-3">
+<h3 id="orgc5996c8">AutoCompletion, Code Action, ….</h3>
+<div class="outline-text-3" id="text-orgc5996c8">
 <p>
 Finally let's step by step configuring our basic java usage. The main package it's lsp-mode and all the other packages work surround it's functionality.
 </p>
@@ -339,9 +338,9 @@ In this output you copy the <i><i>/usr/bin</i></i> stuff
 </p>
 </div>
 </div>
-<div id="outline-container-orga6f1016" class="outline-3">
-<h3 id="orga6f1016">Optional debugger</h3>
-<div class="outline-text-3" id="text-orga6f1016">
+<div id="outline-container-org52b8b63" class="outline-3">
+<h3 id="org52b8b63">Optional debugger</h3>
+<div class="outline-text-3" id="text-org52b8b63">
 <p>
 I personally don't use the debugger a lot(javascript developer addiction), but I know a lot of senior java developer like this function, so to get you covered let's install a debugger package
 </p>
@@ -383,9 +382,9 @@ And the specific package for java
 </pre></div>
 </div>
 </div>
-<div id="outline-container-org61ddfeb" class="outline-3">
-<h3 id="org61ddfeb">File Tree vision</h3>
-<div class="outline-text-3" id="text-org61ddfeb">
+<div id="outline-container-org46543d8" class="outline-3">
+<h3 id="org46543d8">File Tree vision</h3>
+<div class="outline-text-3" id="text-org46543d8">
 <p>
 <code>Treemacs</code> is an wonderful package that provide a file list view(like IDEs) and also integrates beautifully with lsp-mode to list packages and functions like Eclipse, let's install it
 </p>
@@ -404,9 +403,9 @@ In this piece of code, we're installing the package <code>treemacs</code> and bi
 </pre></div>
 </div>
 </div>
-<div id="outline-container-org1a38a46" class="outline-3">
-<h3 id="org1a38a46">Project management</h3>
-<div class="outline-text-3" id="text-org1a38a46">
+<div id="outline-container-orgfd6a19c" class="outline-3">
+<h3 id="orgfd6a19c">Project management</h3>
+<div class="outline-text-3" id="text-orgfd6a19c">
 <p>
    One thing that I love about emacs it's how fast you can move between different projects and fuzzy find files inside the project you working on, the package that do this is called <code>projectile</code>
 let's install it and configure
@@ -428,11 +427,15 @@ In this piece, we're basically installing the package <code>projectile</code> an
 </div>
 </div>
 </div>
-<div id="outline-container-org425f5e2" class="outline-2">
-<h2 id="org425f5e2">Finish</h2>
-<div class="outline-text-2" id="text-org425f5e2">
+<div id="outline-container-org4006896" class="outline-2">
+<h2 id="org4006896">Finish</h2>
+<div class="outline-text-2" id="text-org4006896">
 <p>
 Well, that's the basic setup you need to simulate an entire experience similar to other IDEs like IntelliJ and Eclipse. Obviously I can't show you all that emacs can do and even what lsp-mode can do, so i'll provide links for resources and please contact me for help, will be a pleasure talk with you about emacs!
+</p>
+
+<p>
+Email for contact: me@framatis.com
 </p>
 
 <p>
