@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://framatis.com/blog/</loc>
-  <lastmod>2020-07-24T00:58:00Z</lastmod>
+  <lastmod>2020-07-24T01:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://framatis.com/blog/2020/</loc>
@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>http://framatis.com/blog/archive.html</loc>
-  <lastmod>2020-07-24T00:55:00Z</lastmod>
+  <lastmod>2020-07-24T01:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://framatis.com/blog/categories/</loc>
@@ -24,10 +24,6 @@
  <url>
   <loc>http://framatis.com/blog/categories/emacs/</loc>
   <lastmod>2020-07-21T19:47:00Z</lastmod>
- </url>
- <url>
-  <loc>http://framatis.com/blog/contact.html</loc>
-  <lastmod>2020-07-24T00:58:00Z</lastmod>
  </url>
  <url>
   <loc>http://framatis.com/blog/galleries/</loc>
