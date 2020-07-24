@@ -284,6 +284,8 @@ let's install it and configure
 * Finish
   Well, that's the basic setup you need to simulate an entire experience similar to other IDEs like IntelliJ and Eclipse. Obviously I can't show you all that emacs can do and even what lsp-mode can do, so i'll provide links for resources and please contact me for help, will be a pleasure talk with you about emacs!
 
+  Email for contact: me@framatis.com
+
   Lsp-mode documentation: https://emacs-lsp.github.io/lsp-mode/
   Lsp-java section of documentation: https://emacs-lsp.github.io/lsp-java/
   Video demonstration of this "stack" on emacs conf: https://www.youtube.com/watch?v=Bbjxn9yVNJ8
