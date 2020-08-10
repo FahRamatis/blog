@@ -2,18 +2,19 @@
 <html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Learn how to configure emacs as a Java IDE with Lsp-mode">
+<meta name="description" content="Aprenda a configurar o emacs do zero ate uma IDE java">
 <meta name="viewport" content="width=device-width">
-<title>Emacs as a Java IDE | Fah Blog</title>
-<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<title>Emacs como uma IDE java | Fah Blog</title>
+<link href="../../../assets/css/all.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="http://framatis.com/blog/posts/emacs-as-a-java-ide/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Fabio Ramatis">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="http://framatis.com/blog/posts/pt_br/emacs-as-a-java-ide/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Fabio Ramatis">
+<link rel="next" href="../../en/emacs-as-a-java-ide/" title="Emacs as a Java IDE" type="text/html">
 <meta property="og:site_name" content="Fah Blog">
-<meta property="og:title" content="Emacs as a Java IDE">
-<meta property="og:url" content="http://framatis.com/blog/posts/emacs-as-a-java-ide/">
-<meta property="og:description" content="Learn how to configure emacs as a Java IDE with Lsp-mode">
+<meta property="og:title" content="Emacs como uma IDE java">
+<meta property="og:url" content="http://framatis.com/blog/posts/pt_br/emacs-as-a-java-ide/">
+<meta property="og:description" content="Aprenda a configurar o emacs do zero ate uma IDE java">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-07-21T16:46:48-03:00">
 <meta property="article:tag" content="emacs">
@@ -24,9 +25,9 @@
             styles, `#sidebar-checkbox` for behavior. -->
     <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
         
-    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">Archive</a>
-        <a class="sidebar-nav-item" href="../../categories/">Tags</a>
-        <a class="sidebar-nav-item" href="../../rss.xml">RSS feed</a>
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../../archive.html">Archive</a>
+        <a class="sidebar-nav-item" href="../../../categories/">Tags</a>
+        <a class="sidebar-nav-item" href="../../../rss.xml">RSS feed</a>
     
     
     </nav>
@@ -47,46 +48,63 @@
 
       <div class="container content" id="content">
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Emacs as a Java IDE</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Emacs como uma IDE java</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Fabio Ramatis</span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2020-07-21T16:46:48-03:00" itemprop="datePublished" title="2020-07-21 16:46">2020-07-21 16:46</time></a></p>
-                <meta name="description" itemprop="description" content="Learn how to configure emacs as a Java IDE with Lsp-mode">
+                <meta name="description" itemprop="description" content="Aprenda a configurar o emacs do zero ate uma IDE java">
 </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-org8e7c5bf" class="outline-2">
-<h2 id="org8e7c5bf">Introduction</h2>
-<div class="outline-text-2" id="text-org8e7c5bf">
+    <div id="outline-container-org1998eac" class="outline-2">
+<h2 id="org1998eac">Introduction</h2>
+<div class="outline-text-2" id="text-org1998eac">
 <p>
 Historically java developers was dominated by IDEs and heavy programs(AKA jetbrains stuffs),
 but now with the lsp-mode for emacs, we have an easy to setup and power engine to produce java code
 with all others IDEs offers, like autocompletion, go to definition, code actions, refactor options
 and something that IDEs don't have, <b>A powerful keyboard center experience and high extensibility</b>
 </p>
+
+<p>
+Historicamente desenvolvedores java foram dominados pela obrigacao de utilizar IDEs e programas pesados para seu trabalho no dia dia,
+mas agora com o <code>lsp-mode</code> para o editor emacs, tornou-se possivel montar um setup facil de configurar e extremamente poderoso para
+produzir codigo java com todas as outras ferramentas que as IDEs oferecem, como auto-complete, go to definition, code actions, refactor options
+a uma coisa da qual IDEs nao conseguem ter(e emacs particularmente brilha nesse ponto), <b>Uma poderosa experienca centrada no uso do teclado e com alta extensibilidade</b>
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgd3bc448" class="outline-2">
-<h2 id="orgd3bc448">Setting Emacs for basic usage</h2>
-<div class="outline-text-2" id="text-orgd3bc448">
+<div id="outline-container-org0186097" class="outline-2">
+<h2 id="org0186097">Setting Emacs for basic usage</h2>
+<div class="outline-text-2" id="text-org0186097">
 <p>
 I'll assume you don't know anything about emacs and want to know about this wonderful
 elisp interpreter.
 </p>
+
+<p>
+Eu vou assumir que você não sabe nada sobre emacs e esta aqui para aprender sobre esse incrivel interpretador
+elisp
+</p>
 </div>
 
-<div id="outline-container-org601f16d" class="outline-3">
-<h3 id="org601f16d">Installing</h3>
-<div class="outline-text-3" id="text-org601f16d">
+<div id="outline-container-org1d70055" class="outline-3">
+<h3 id="org1d70055">Installing</h3>
+<div class="outline-text-3" id="text-org1d70055">
 <p>
 First, to install emacs is simple enough to install with your package manager
+Primeiro, instalar o emacs é bem simples utilizando o seu package manager.
 </p>
 
 <p>
 For Ubuntu/Debian based distros:
+</p>
+
+<p>
+Para distros Ubuntu ou baseadas no Debian:
 </p>
 <div class="highlight"><pre><span></span>   sudo apt-get install emacs
 </pre></div>
@@ -94,11 +112,19 @@ For Ubuntu/Debian based distros:
 <p>
 For Arch based distros:
 </p>
+
+<p>
+Para distros baseadas no Arch:
+</p>
 <div class="highlight"><pre><span></span>   sudo pacman -S emacs
 </pre></div>
 
 <p>
 For OSX:
+</p>
+
+<p>
+Para OSX(MacOS):
 </p>
 <div class="highlight"><pre><span></span>   brew cask install emacs
 </pre></div>
@@ -106,15 +132,23 @@ For OSX:
 <p>
 If you use other system, see in this link: <a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a>
 </p>
+
+<p>
+Se você usa algum outro sistema, dê uma olhada neste link: <a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a>
+</p>
 </div>
 </div>
 
-<div id="outline-container-org9288649" class="outline-3">
-<h3 id="org9288649">Basic settings</h3>
-<div class="outline-text-3" id="text-org9288649">
+<div id="outline-container-org4a152fc" class="outline-3">
+<h3 id="org4a152fc">Basic settings</h3>
+<div class="outline-text-3" id="text-org4a152fc">
 <p>
 Emacs default is quite ugly, like <b>trust me</b> it's ugly
-<img src="../../images/emacs-default.png" alt="nil"></p>
+</p>
+
+<p>
+Emacs padrão é bastante feio, tipo <b>acredite em mim</b>, é bem feio
+<img src="../../../images/emacs-default.png" alt="nil"></p>
 
 <p>
 So let's make this look nicer and also learn some cool things about emacs.
@@ -124,8 +158,19 @@ and hit Enter <i>this is your main config file</i>.
 </p>
 
 <p>
+Então vamos torna-lo mais agradável aos olhos e aproveitar para aprender algumas coisas incríveis sobre emacs.
+Primeiro abra o emacs e pressione <code>C-x C-f</code>, onde C é uma anotação para Control(Ctrl), isso irá executar um minibuffer
+na parte inferior do editor onde conseguirá encontrar arquivos. Digite <code>~/.emacs.d/init.el</code> e aperte Enter. <i>Parabéns! Este é o seu arquivo de configuração</i>
+</p>
+
+<p>
 Now let's prettify a little bit this editor, write this in the file:
 </p>
+
+<p>
+Agora vamos maquiar um pouco esse editor, escreva isso no seu arquivo:
+</p>
+
 <div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">scroll-bar-mode</span> <span class="mi">-1</span><span class="p">)</span>
    <span class="p">(</span><span class="nf">tool-bar-mode</span> <span class="mi">-1</span><span class="p">)</span>
    <span class="p">(</span><span class="nf">menu-bar-mode</span> <span class="mi">-1</span><span class="p">)</span>
@@ -140,13 +185,18 @@ Now let's prettify a little bit this editor, write this in the file:
 <p>
 To make this apply, press <code>M-x</code> where M stands for the Alt Key, type <i>eval-buffer</i> and press Enter
 Now you must have an easier and more enjoyable environment.
-<img src="../../images/emacs-little-config.png" alt="nil"></p>
+</p>
+
+<p>
+Para fazer suas alterações executarem, pressione <code>M-x</code>, onde M é uma anotação para a tecla Alt, após isso digite <i>eval-buffer</i> e pressione Enter.
+Agora você possui um editor mais limpo e agradavel.
+<img src="../../../images/emacs-little-config.png" alt="nil"></p>
 </div>
 </div>
 
-<div id="outline-container-orgd47b646" class="outline-3">
-<h3 id="orgd47b646">Setting use-package</h3>
-<div class="outline-text-3" id="text-orgd47b646">
+<div id="outline-container-org343059c" class="outline-3">
+<h3 id="org343059c">Setting use-package</h3>
+<div class="outline-text-3" id="text-org343059c">
 <p>
 You remember I said that emacs has a <b>huge</b> amount of packages? Handle installation of all this packages it's madness, so to make our lifes easier let's setup <i>use-package</i>, use-package it's basically a package to help you install packages, <b>yeah, emacs is incredible</b>
 </p>
@@ -157,8 +207,8 @@ Write this in your <code>init.el</code>
 <div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">require</span> <span class="ss">'package</span><span class="p">)</span>
    <span class="p">(</span><span class="nf">setq</span> <span class="nv">package-enable-at-startup</span> <span class="nv">nil</span><span class="p">)</span> <span class="c1">; dont do it immediately</span>
    <span class="p">(</span><span class="nf">setq</span> <span class="nv">package-archives</span> <span class="o">'</span><span class="p">((</span><span class="s">"org"</span>       <span class="o">.</span> <span class="s">"http://orgmode.org/elpa/"</span><span class="p">)</span>
-		<span class="p">(</span><span class="s">"gnu"</span>       <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
-		<span class="p">(</span><span class="s">"melpa"</span>     <span class="o">.</span> <span class="s">"https://melpa.org/packages/"</span><span class="p">)))</span>
+	<span class="p">(</span><span class="s">"gnu"</span>       <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
+	<span class="p">(</span><span class="s">"melpa"</span>     <span class="o">.</span> <span class="s">"https://melpa.org/packages/"</span><span class="p">)))</span>
    <span class="p">(</span><span class="nf">package-initialize</span><span class="p">)</span>
 
    <span class="c1">;; Bootstrap use-package</span>
@@ -178,9 +228,9 @@ Congrats! Now let's install the packages that you need for a beautiful experienc
 </p>
 </div>
 </div>
-<div id="outline-container-orgcfdfc84" class="outline-3">
-<h3 id="orgcfdfc84">First theme</h3>
-<div class="outline-text-3" id="text-orgcfdfc84">
+<div id="outline-container-org7680b86" class="outline-3">
+<h3 id="org7680b86">First theme</h3>
+<div class="outline-text-3" id="text-org7680b86">
 <p>
 Let's install the darcula theme to make you feel like you're on IntelliJ
 </p>
@@ -196,12 +246,12 @@ Write this in your <code>init.el</code>
 </pre></div>
 
 <p>
-Beautiful editor! <img src="../../images/emacs-darcula.png" alt="nil"></p>
+Beautiful editor! <img src="../../../images/emacs-darcula.png" alt="nil"></p>
 </div>
 </div>
-<div id="outline-container-org100a118" class="outline-3">
-<h3 id="org100a118">Useful package for beginners and advanced</h3>
-<div class="outline-text-3" id="text-org100a118">
+<div id="outline-container-org16d02ee" class="outline-3">
+<h3 id="org16d02ee">Useful package for beginners and advanced</h3>
+<div class="outline-text-3" id="text-org16d02ee">
 <p>
 There's a package called <code>which-key</code> that helps a <b>lot</b> to memorize emacs keybindings as you go, basically it provide a minibuffer showing you the options for you initial key press.
 </p>
@@ -216,9 +266,9 @@ Talk is cheap, I'll show you the code and give images to the functionalitty.
      <span class="nv">:config</span>
      <span class="p">(</span><span class="nf">which-key-setup-side-window-bottom</span><span class="p">)</span>
      <span class="p">(</span><span class="nf">setq</span> <span class="nv">which-key-sort-order</span> <span class="ss">'which-key-key-order-alpha</span>
-	   <span class="nv">which-key-side-window-max-width</span> <span class="mf">0.33</span>
-	   <span class="nv">which-key-idle-delay</span> <span class="mf">0.7</span>
-	   <span class="nv">which-key-idle-secondary-delay</span> <span class="mf">0.35</span><span class="p">)</span>
+       <span class="nv">which-key-side-window-max-width</span> <span class="mf">0.33</span>
+       <span class="nv">which-key-idle-delay</span> <span class="mf">0.7</span>
+       <span class="nv">which-key-idle-secondary-delay</span> <span class="mf">0.35</span><span class="p">)</span>
      <span class="nv">:diminish</span> <span class="nv">which-key-mode</span><span class="p">)</span>
 </pre></div>
 
@@ -227,17 +277,17 @@ Tell me, it's pretty cool and useful right? You'll love as more you use, trust m
 </p>
 
 <p>
-<img src="../../images/emacs-whichkey.png" alt="nil"></p>
+<img src="../../../images/emacs-whichkey.png" alt="nil"></p>
 </div>
 </div>
 </div>
-<div id="outline-container-org49fdf91" class="outline-2">
-<h2 id="org49fdf91">Java Setup</h2>
-<div class="outline-text-2" id="text-org49fdf91">
+<div id="outline-container-org5782a80" class="outline-2">
+<h2 id="org5782a80">Java Setup</h2>
+<div class="outline-text-2" id="text-org5782a80">
 </div>
-<div id="outline-container-orgc5996c8" class="outline-3">
-<h3 id="orgc5996c8">AutoCompletion, Code Action, ….</h3>
-<div class="outline-text-3" id="text-orgc5996c8">
+<div id="outline-container-orgfa37ab5" class="outline-3">
+<h3 id="orgfa37ab5">AutoCompletion, Code Action, ….</h3>
+<div class="outline-text-3" id="text-orgfa37ab5">
 <p>
 Finally let's step by step configuring our basic java usage. The main package it's lsp-mode and all the other packages work surround it's functionality.
 </p>
@@ -250,8 +300,8 @@ Write this in your <code>init.el</code>, it's basically the installation and set
    <span class="nv">:ensure</span> <span class="nv">t</span>
    <span class="nv">:init</span> <span class="p">(</span><span class="nf">setq</span> <span class="nv">lsp-keymap-prefix</span> <span class="s">"C-c l"</span><span class="p">)</span>
    <span class="nv">:hook</span> <span class="p">(</span>
-	  <span class="p">(</span><span class="nf">java-mode</span> <span class="o">.</span> <span class="nv">lsp</span><span class="p">)</span>
-	  <span class="p">(</span><span class="nf">lsp-mode</span> <span class="o">.</span> <span class="nv">lsp-enable-which-key-integration</span><span class="p">))</span>
+      <span class="p">(</span><span class="nf">java-mode</span> <span class="o">.</span> <span class="nv">lsp</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">lsp-mode</span> <span class="o">.</span> <span class="nv">lsp-enable-which-key-integration</span><span class="p">))</span>
    <span class="nv">:commands</span> <span class="nv">lsp</span><span class="p">)</span>
 </pre></div>
 
@@ -290,9 +340,9 @@ This package give us the code actions in a nice popup menu like IDEs, we'll inst
      <span class="nv">:ensure</span> <span class="nv">t</span>
      <span class="nv">:config</span>
      <span class="p">(</span><span class="nf">setq</span> <span class="nv">lsp-prefer-flymake</span> <span class="nv">nil</span>
-	   <span class="nv">lsp-ui-doc-delay</span> <span class="mf">5.0</span>
-	   <span class="nv">lsp-ui-sideline-enable</span> <span class="nv">nil</span>
-	   <span class="nv">lsp-ui-sideline-show-symbol</span> <span class="nv">nil</span><span class="p">))</span>
+       <span class="nv">lsp-ui-doc-delay</span> <span class="mf">5.0</span>
+       <span class="nv">lsp-ui-sideline-enable</span> <span class="nv">nil</span>
+       <span class="nv">lsp-ui-sideline-show-symbol</span> <span class="nv">nil</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">"M-RET"</span><span class="p">)</span> <span class="ss">'lsp-execute-code-action</span><span class="p">)</span>
 </pre></div>
 
@@ -304,18 +354,18 @@ Finally we'll install <code>lsp-java</code>, a integration with lsp-mode for jav
      <span class="nv">:ensure</span> <span class="nv">t</span>
      <span class="nv">:init</span>
      <span class="p">(</span><span class="nf">setq</span> <span class="nv">lsp-java-vmargs</span>
-	   <span class="p">(</span><span class="nf">list</span>
-	    <span class="s">"-noverify"</span>
-	    <span class="s">"-Xmx2G"</span>
-	    <span class="s">"-XX:+UseG1GC"</span>
-	    <span class="s">"-XX:+UseStringDeduplication"</span>
-	    <span class="s">"-javaagent:/home/cherry/development/lombok.jar"</span>
-	    <span class="p">)</span>
+       <span class="p">(</span><span class="nf">list</span>
+	<span class="s">"-noverify"</span>
+	<span class="s">"-Xmx2G"</span>
+	<span class="s">"-XX:+UseG1GC"</span>
+	<span class="s">"-XX:+UseStringDeduplication"</span>
+	<span class="s">"-javaagent:/home/cherry/development/lombok.jar"</span>
+	<span class="p">)</span>
 
-	   <span class="nv">lsp-java-save-action-organize-imports</span> <span class="nv">nil</span>
+       <span class="nv">lsp-java-save-action-organize-imports</span> <span class="nv">nil</span>
 
-	   <span class="nv">lsp-java-java-path</span> <span class="s">"/usr/bin/java"</span>
-	   <span class="p">)</span>
+       <span class="nv">lsp-java-java-path</span> <span class="s">"/usr/bin/java"</span>
+       <span class="p">)</span>
      <span class="nv">:config</span>
      <span class="p">(</span><span class="nf">add-hook</span> <span class="ss">'java-mode-hook</span> <span class="o">#</span><span class="ss">'lsp</span><span class="p">))</span>
 </pre></div>
@@ -330,42 +380,42 @@ And for the variable <b>lsp-java-java-path</b> you put the location for java bin
 
 <pre class="example">
 java: /usr/bin/java /usr/share/java /usr/share/man/man1/java.1.gz
-
 </pre>
+
 
 <p>
 In this output you copy the <i><i>/usr/bin</i></i> stuff
 </p>
 </div>
 </div>
-<div id="outline-container-org52b8b63" class="outline-3">
-<h3 id="org52b8b63">Optional debugger</h3>
-<div class="outline-text-3" id="text-org52b8b63">
+<div id="outline-container-org57ddd09" class="outline-3">
+<h3 id="org57ddd09">Optional debugger</h3>
+<div class="outline-text-3" id="text-org57ddd09">
 <p>
 I personally don't use the debugger a lot(javascript developer addiction), but I know a lot of senior java developer like this function, so to get you covered let's install a debugger package
 </p>
 
-<div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">dap-mode</span>
-     <span class="nv">:ensure</span> <span class="nv">t</span>
-     <span class="nv">:after</span> <span class="nv">lsp-mode</span>
-     <span class="nv">:config</span>
-     <span class="p">(</span><span class="nf">dap-mode</span> <span class="nv">t</span><span class="p">)</span>
-     <span class="p">(</span><span class="nf">dap-ui-mode</span> <span class="nv">t</span><span class="p">)</span>
-     <span class="p">(</span><span class="nf">dap-tooltip-mode</span> <span class="mi">1</span><span class="p">)</span>
-     <span class="p">(</span><span class="nf">tooltip-mode</span> <span class="mi">1</span><span class="p">)</span>
-     <span class="p">(</span><span class="nf">dap-register-debug-template</span>
-      <span class="s">"localhost:5005"</span>
-      <span class="p">(</span><span class="nb">list </span><span class="nv">:type</span> <span class="s">"java"</span>
-	    <span class="nv">:request</span> <span class="s">"attach"</span>
-	    <span class="nv">:hostName</span> <span class="s">"localhost"</span>
-	    <span class="nv">:port</span> <span class="mi">5005</span><span class="p">))</span>
-     <span class="p">(</span><span class="nf">dap-register-debug-template</span>
-      <span class="s">"10.186.38.171:5005"</span>
-      <span class="p">(</span><span class="nb">list </span><span class="nv">:type</span> <span class="s">"java"</span>
-	    <span class="nv">:request</span> <span class="s">"attach"</span>
-	    <span class="nv">:hostName</span> <span class="s">"10.186.38.171"</span>
-	    <span class="nv">:port</span> <span class="mi">5005</span><span class="p">))</span>
-     <span class="p">)</span>
+<div class="highlight"><pre><span></span>    <span class="p">(</span><span class="nf">use-package</span> <span class="nv">dap-mode</span>
+      <span class="nv">:ensure</span> <span class="nv">t</span>
+      <span class="nv">:after</span> <span class="nv">lsp-mode</span>
+      <span class="nv">:config</span>
+      <span class="p">(</span><span class="nf">dap-mode</span> <span class="nv">t</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">dap-ui-mode</span> <span class="nv">t</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">dap-tooltip-mode</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">tooltip-mode</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">dap-register-debug-template</span>
+   <span class="s">"localhost:5005"</span>
+   <span class="p">(</span><span class="nb">list </span><span class="nv">:type</span> <span class="s">"java"</span>
+	 <span class="nv">:request</span> <span class="s">"attach"</span>
+	 <span class="nv">:hostName</span> <span class="s">"localhost"</span>
+	 <span class="nv">:port</span> <span class="mi">5005</span><span class="p">))</span>
+      <span class="p">(</span><span class="nf">dap-register-debug-template</span>
+   <span class="s">"10.186.38.171:5005"</span>
+   <span class="p">(</span><span class="nb">list </span><span class="nv">:type</span> <span class="s">"java"</span>
+	 <span class="nv">:request</span> <span class="s">"attach"</span>
+	 <span class="nv">:hostName</span> <span class="s">"10.186.38.171"</span>
+	 <span class="nv">:port</span> <span class="mi">5005</span><span class="p">))</span>
+      <span class="p">)</span>
 </pre></div>
 
 <p>
@@ -382,9 +432,9 @@ And the specific package for java
 </pre></div>
 </div>
 </div>
-<div id="outline-container-org46543d8" class="outline-3">
-<h3 id="org46543d8">File Tree vision</h3>
-<div class="outline-text-3" id="text-org46543d8">
+<div id="outline-container-org247fb76" class="outline-3">
+<h3 id="org247fb76">File Tree vision</h3>
+<div class="outline-text-3" id="text-org247fb76">
 <p>
 <code>Treemacs</code> is an wonderful package that provide a file list view(like IDEs) and also integrates beautifully with lsp-mode to list packages and functions like Eclipse, let's install it
 </p>
@@ -396,16 +446,16 @@ In this piece of code, we're installing the package <code>treemacs</code> and bi
 <div class="highlight"><pre><span></span>   <span class="p">(</span><span class="nf">use-package</span> <span class="nv">treemacs</span>
      <span class="nv">:init</span>
      <span class="p">(</span><span class="nf">add-hook</span> <span class="ss">'treemacs-mode-hook</span>
-	       <span class="p">(</span><span class="k">lambda </span><span class="p">()</span> <span class="p">(</span><span class="nf">treemacs-resize-icons</span> <span class="mi">15</span><span class="p">)))</span>
+       <span class="p">(</span><span class="k">lambda </span><span class="p">()</span> <span class="p">(</span><span class="nf">treemacs-resize-icons</span> <span class="mi">15</span><span class="p">)))</span>
      <span class="nv">:config</span>
      <span class="p">(</span><span class="nf">global-set-key</span> <span class="p">[</span><span class="nv">f8</span><span class="p">]</span> <span class="ss">'treemacs</span><span class="p">)</span>
      <span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div id="outline-container-orgfd6a19c" class="outline-3">
-<h3 id="orgfd6a19c">Project management</h3>
-<div class="outline-text-3" id="text-orgfd6a19c">
+<div id="outline-container-org65a2ae1" class="outline-3">
+<h3 id="org65a2ae1">Project management</h3>
+<div class="outline-text-3" id="text-org65a2ae1">
 <p>
    One thing that I love about emacs it's how fast you can move between different projects and fuzzy find files inside the project you working on, the package that do this is called <code>projectile</code>
 let's install it and configure
@@ -422,14 +472,14 @@ In this piece, we're basically installing the package <code>projectile</code> an
     <span class="p">(</span><span class="nf">setq</span> <span class="nv">projectile-completion-system</span> <span class="ss">'ivy</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">projectile-mode</span> <span class="nv">+1</span><span class="p">)</span>
     <span class="nv">:bind</span> <span class="p">((</span><span class="s">"C-c p"</span> <span class="o">.</span> <span class="nv">projectile-command-map</span><span class="p">)</span>
-	   <span class="p">(</span><span class="s">"C-."</span> <span class="o">.</span> <span class="nv">projectile-find-file</span><span class="p">)))</span>
+       <span class="p">(</span><span class="s">"C-."</span> <span class="o">.</span> <span class="nv">projectile-find-file</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div id="outline-container-org4006896" class="outline-2">
-<h2 id="org4006896">Finish</h2>
-<div class="outline-text-2" id="text-org4006896">
+<div id="outline-container-orgbb601e5" class="outline-2">
+<h2 id="orgbb601e5">Finish</h2>
+<div class="outline-text-2" id="text-orgbb601e5">
 <p>
 Well, that's the basic setup you need to simulate an entire experience similar to other IDEs like IntelliJ and Eclipse. Obviously I can't show you all that emacs can do and even what lsp-mode can do, so i'll provide links for resources and please contact me for help, will be a pleasure talk with you about emacs!
 </p>
@@ -447,7 +497,12 @@ Video demonstration of this "stack" on emacs conf: <a href="https://www.youtube.
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/emacs/" rel="tag">emacs</a></li>
+<li><a class="tag p-category" href="../../../categories/emacs/" rel="tag">emacs</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="next">
+                <a href="../../en/emacs-as-a-java-ide/" rel="next" title="Emacs as a Java IDE">Next post</a>
+            </li>
         </ul></nav></aside></article><footer id="footer"><p>Contents © 2020         <a href="mailto:fah.ramatis@gmail.com">Fabio Ramatis</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
@@ -457,7 +512,7 @@ Video demonstration of this "stack" on emacs conf: <a href="https://www.youtube.
     
     
     
-            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+            <script src="../../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates -->

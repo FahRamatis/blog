@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fah Blog</title><link>http://framatis.com/blog/</link><description>My blog about tech and mostly emacs</description><atom:link href="http://framatis.com/blog/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:fah.ramatis@gmail.com"&gt;Fabio Ramatis&lt;/a&gt; </copyright><lastBuildDate>Fri, 24 Jul 2020 01:05:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Emacs as a Java IDE</title><link>http://framatis.com/blog/posts/emacs-as-a-java-ide/</link><dc:creator>Fabio Ramatis</dc:creator><description>&lt;div id="outline-container-org8e7c5bf" class="outline-2"&gt;
-&lt;h2 id="org8e7c5bf"&gt;Introduction&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8e7c5bf"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fah Blog</title><link>http://framatis.com/blog/</link><description>My blog about tech and mostly emacs</description><atom:link href="http://framatis.com/blog/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:fah.ramatis@gmail.com"&gt;Fabio Ramatis&lt;/a&gt; </copyright><lastBuildDate>Tue, 04 Aug 2020 20:57:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Emacs as a Java IDE</title><link>http://framatis.com/blog/posts/en/emacs-as-a-java-ide/</link><dc:creator>Fabio Ramatis</dc:creator><description>&lt;div id="outline-container-org870656c" class="outline-2"&gt;
+&lt;h2 id="org870656c"&gt;Introduction&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org870656c"&gt;
 &lt;p&gt;
 Historically java developers was dominated by IDEs and heavy programs(AKA jetbrains stuffs),
 but now with the lsp-mode for emacs, we have an easy to setup and power engine to produce java code
@@ -11,18 +11,18 @@ and something that IDEs don't have, &lt;b&gt;A powerful keyboard center experien
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd3bc448" class="outline-2"&gt;
-&lt;h2 id="orgd3bc448"&gt;Setting Emacs for basic usage&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd3bc448"&gt;
+&lt;div id="outline-container-orgd65ad50" class="outline-2"&gt;
+&lt;h2 id="orgd65ad50"&gt;Setting Emacs for basic usage&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd65ad50"&gt;
 &lt;p&gt;
 I'll assume you don't know anything about emacs and want to know about this wonderful
 elisp interpreter.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org601f16d" class="outline-3"&gt;
-&lt;h3 id="org601f16d"&gt;Installing&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org601f16d"&gt;
+&lt;div id="outline-container-org346e3d8" class="outline-3"&gt;
+&lt;h3 id="org346e3d8"&gt;Installing&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org346e3d8"&gt;
 &lt;p&gt;
 First, to install emacs is simple enough to install with your package manager
 &lt;/p&gt;
@@ -51,9 +51,9 @@ If you use other system, see in this link: &lt;a href="https://www.gnu.org/softw
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9288649" class="outline-3"&gt;
-&lt;h3 id="org9288649"&gt;Basic settings&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9288649"&gt;
+&lt;div id="outline-container-org73a9028" class="outline-3"&gt;
+&lt;h3 id="org73a9028"&gt;Basic settings&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org73a9028"&gt;
 &lt;p&gt;
 Emacs default is quite ugly, like &lt;b&gt;trust me&lt;/b&gt; it's ugly
 &lt;img src="http://framatis.com/blog/images/emacs-default.png" alt="nil"&gt;
@@ -88,9 +88,9 @@ Now you must have an easier and more enjoyable environment.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd47b646" class="outline-3"&gt;
-&lt;h3 id="orgd47b646"&gt;Setting use-package&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd47b646"&gt;
+&lt;div id="outline-container-orgf1af47b" class="outline-3"&gt;
+&lt;h3 id="orgf1af47b"&gt;Setting use-package&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf1af47b"&gt;
 &lt;p&gt;
 You remember I said that emacs has a &lt;b&gt;huge&lt;/b&gt; amount of packages? Handle installation of all this packages it's madness, so to make our lifes easier let's setup &lt;i&gt;use-package&lt;/i&gt;, use-package it's basically a package to help you install packages, &lt;b&gt;yeah, emacs is incredible&lt;/b&gt;
 &lt;/p&gt;
@@ -122,9 +122,9 @@ Congrats! Now let's install the packages that you need for a beautiful experienc
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcfdfc84" class="outline-3"&gt;
-&lt;h3 id="orgcfdfc84"&gt;First theme&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcfdfc84"&gt;
+&lt;div id="outline-container-orgec16f4b" class="outline-3"&gt;
+&lt;h3 id="orgec16f4b"&gt;First theme&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgec16f4b"&gt;
 &lt;p&gt;
 Let's install the darcula theme to make you feel like you're on IntelliJ
 &lt;/p&gt;
@@ -144,9 +144,9 @@ Beautiful editor! &lt;img src="http://framatis.com/blog/images/emacs-darcula.png
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org100a118" class="outline-3"&gt;
-&lt;h3 id="org100a118"&gt;Useful package for beginners and advanced&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org100a118"&gt;
+&lt;div id="outline-container-org088cb2b" class="outline-3"&gt;
+&lt;h3 id="org088cb2b"&gt;Useful package for beginners and advanced&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org088cb2b"&gt;
 &lt;p&gt;
 There's a package called &lt;code&gt;which-key&lt;/code&gt; that helps a &lt;b&gt;lot&lt;/b&gt; to memorize emacs keybindings as you go, basically it provide a minibuffer showing you the options for you initial key press.
 &lt;/p&gt;
@@ -177,13 +177,13 @@ Tell me, it's pretty cool and useful right? You'll love as more you use, trust m
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org49fdf91" class="outline-2"&gt;
-&lt;h2 id="org49fdf91"&gt;Java Setup&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org49fdf91"&gt;
+&lt;div id="outline-container-org8798b5d" class="outline-2"&gt;
+&lt;h2 id="org8798b5d"&gt;Java Setup&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8798b5d"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc5996c8" class="outline-3"&gt;
-&lt;h3 id="orgc5996c8"&gt;AutoCompletion, Code Action, ….&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc5996c8"&gt;
+&lt;div id="outline-container-org3cbe40f" class="outline-3"&gt;
+&lt;h3 id="org3cbe40f"&gt;AutoCompletion, Code Action, ….&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3cbe40f"&gt;
 &lt;p&gt;
 Finally let's step by step configuring our basic java usage. The main package it's lsp-mode and all the other packages work surround it's functionality.
 &lt;/p&gt;
@@ -284,9 +284,9 @@ In this output you copy the &lt;i&gt;&lt;i&gt;/usr/bin&lt;/i&gt;&lt;/i&gt; stuff
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org52b8b63" class="outline-3"&gt;
-&lt;h3 id="org52b8b63"&gt;Optional debugger&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org52b8b63"&gt;
+&lt;div id="outline-container-org74a87a0" class="outline-3"&gt;
+&lt;h3 id="org74a87a0"&gt;Optional debugger&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org74a87a0"&gt;
 &lt;p&gt;
 I personally don't use the debugger a lot(javascript developer addiction), but I know a lot of senior java developer like this function, so to get you covered let's install a debugger package
 &lt;/p&gt;
@@ -328,9 +328,9 @@ And the specific package for java
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org46543d8" class="outline-3"&gt;
-&lt;h3 id="org46543d8"&gt;File Tree vision&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org46543d8"&gt;
+&lt;div id="outline-container-org30d4ce0" class="outline-3"&gt;
+&lt;h3 id="org30d4ce0"&gt;File Tree vision&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org30d4ce0"&gt;
 &lt;p&gt;
 &lt;code&gt;Treemacs&lt;/code&gt; is an wonderful package that provide a file list view(like IDEs) and also integrates beautifully with lsp-mode to list packages and functions like Eclipse, let's install it
 &lt;/p&gt;
@@ -349,9 +349,9 @@ In this piece of code, we're installing the package &lt;code&gt;treemacs&lt;/cod
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgfd6a19c" class="outline-3"&gt;
-&lt;h3 id="orgfd6a19c"&gt;Project management&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgfd6a19c"&gt;
+&lt;div id="outline-container-orge122b00" class="outline-3"&gt;
+&lt;h3 id="orge122b00"&gt;Project management&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge122b00"&gt;
 &lt;p&gt;
    One thing that I love about emacs it's how fast you can move between different projects and fuzzy find files inside the project you working on, the package that do this is called &lt;code&gt;projectile&lt;/code&gt;
 let's install it and configure
@@ -373,9 +373,9 @@ In this piece, we're basically installing the package &lt;code&gt;projectile&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org4006896" class="outline-2"&gt;
-&lt;h2 id="org4006896"&gt;Finish&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4006896"&gt;
+&lt;div id="outline-container-org783b81f" class="outline-2"&gt;
+&lt;h2 id="org783b81f"&gt;Finish&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org783b81f"&gt;
 &lt;p&gt;
 Well, that's the basic setup you need to simulate an entire experience similar to other IDEs like IntelliJ and Eclipse. Obviously I can't show you all that emacs can do and even what lsp-mode can do, so i'll provide links for resources and please contact me for help, will be a pleasure talk with you about emacs!
 &lt;/p&gt;
@@ -390,4 +390,444 @@ Lsp-java section of documentation: &lt;a href="https://emacs-lsp.github.io/lsp-j
 Video demonstration of this "stack" on emacs conf: &lt;a href="https://www.youtube.com/watch?v=Bbjxn9yVNJ8"&gt;https://www.youtube.com/watch?v=Bbjxn9yVNJ8&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><guid>http://framatis.com/blog/posts/emacs-as-a-java-ide/</guid><pubDate>Tue, 21 Jul 2020 19:46:48 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>emacs</category><guid>http://framatis.com/blog/posts/en/emacs-as-a-java-ide/</guid><pubDate>Tue, 21 Jul 2020 19:46:48 GMT</pubDate></item><item><title>Emacs como uma IDE java</title><link>http://framatis.com/blog/posts/pt_br/emacs-as-a-java-ide/</link><dc:creator>Fabio Ramatis</dc:creator><description>&lt;div id="outline-container-org1998eac" class="outline-2"&gt;
+&lt;h2 id="org1998eac"&gt;Introduction&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1998eac"&gt;
+&lt;p&gt;
+Historically java developers was dominated by IDEs and heavy programs(AKA jetbrains stuffs),
+but now with the lsp-mode for emacs, we have an easy to setup and power engine to produce java code
+with all others IDEs offers, like autocompletion, go to definition, code actions, refactor options
+and something that IDEs don't have, &lt;b&gt;A powerful keyboard center experience and high extensibility&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Historicamente desenvolvedores java foram dominados pela obrigacao de utilizar IDEs e programas pesados para seu trabalho no dia dia,
+mas agora com o &lt;code&gt;lsp-mode&lt;/code&gt; para o editor emacs, tornou-se possivel montar um setup facil de configurar e extremamente poderoso para
+produzir codigo java com todas as outras ferramentas que as IDEs oferecem, como auto-complete, go to definition, code actions, refactor options
+a uma coisa da qual IDEs nao conseguem ter(e emacs particularmente brilha nesse ponto), &lt;b&gt;Uma poderosa experienca centrada no uso do teclado e com alta extensibilidade&lt;/b&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org0186097" class="outline-2"&gt;
+&lt;h2 id="org0186097"&gt;Setting Emacs for basic usage&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0186097"&gt;
+&lt;p&gt;
+I'll assume you don't know anything about emacs and want to know about this wonderful
+elisp interpreter.
+&lt;/p&gt;
+
+&lt;p&gt;
+Eu vou assumir que você não sabe nada sobre emacs e esta aqui para aprender sobre esse incrivel interpretador
+elisp
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org1d70055" class="outline-3"&gt;
+&lt;h3 id="org1d70055"&gt;Installing&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1d70055"&gt;
+&lt;p&gt;
+First, to install emacs is simple enough to install with your package manager
+Primeiro, instalar o emacs é bem simples utilizando o seu package manager.
+&lt;/p&gt;
+
+&lt;p&gt;
+For Ubuntu/Debian based distros:
+&lt;/p&gt;
+
+&lt;p&gt;
+Para distros Ubuntu ou baseadas no Debian:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   sudo apt-get install emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+For Arch based distros:
+&lt;/p&gt;
+
+&lt;p&gt;
+Para distros baseadas no Arch:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   sudo pacman -S emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+For OSX:
+&lt;/p&gt;
+
+&lt;p&gt;
+Para OSX(MacOS):
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   brew cask install emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+If you use other system, see in this link: &lt;a href="https://www.gnu.org/software/emacs/download.html"&gt;https://www.gnu.org/software/emacs/download.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Se você usa algum outro sistema, dê uma olhada neste link: &lt;a href="https://www.gnu.org/software/emacs/download.html"&gt;https://www.gnu.org/software/emacs/download.html&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org4a152fc" class="outline-3"&gt;
+&lt;h3 id="org4a152fc"&gt;Basic settings&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4a152fc"&gt;
+&lt;p&gt;
+Emacs default is quite ugly, like &lt;b&gt;trust me&lt;/b&gt; it's ugly
+&lt;/p&gt;
+
+&lt;p&gt;
+Emacs padrão é bastante feio, tipo &lt;b&gt;acredite em mim&lt;/b&gt;, é bem feio
+&lt;img src="http://framatis.com/blog/images/emacs-default.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+So let's make this look nicer and also learn some cool things about emacs.
+First open emacs and type &lt;code&gt;C-x C-f&lt;/code&gt; where C is shortcut for Control(Ctrl), this
+brings you a minibuffer on the bottom where you can find files, type &lt;code&gt;~/.emacs.d/init.el&lt;/code&gt;
+and hit Enter &lt;i&gt;this is your main config file&lt;/i&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+Então vamos torna-lo mais agradável aos olhos e aproveitar para aprender algumas coisas incríveis sobre emacs.
+Primeiro abra o emacs e pressione &lt;code&gt;C-x C-f&lt;/code&gt;, onde C é uma anotação para Control(Ctrl), isso irá executar um minibuffer
+na parte inferior do editor onde conseguirá encontrar arquivos. Digite &lt;code&gt;~/.emacs.d/init.el&lt;/code&gt; e aperte Enter. &lt;i&gt;Parabéns! Este é o seu arquivo de configuração&lt;/i&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Now let's prettify a little bit this editor, write this in the file:
+&lt;/p&gt;
+
+&lt;p&gt;
+Agora vamos maquiar um pouco esse editor, escreva isso no seu arquivo:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;scroll-bar-mode&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;tool-bar-mode&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;menu-bar-mode&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;ring-bell-function&lt;/span&gt; &lt;span class="ss"&gt;'ignore&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;locale-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-terminal-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-keyboard-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-selection-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;prefer-coding-system&lt;/span&gt; &lt;span class="ss"&gt;'utf-8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+To make this apply, press &lt;code&gt;M-x&lt;/code&gt; where M stands for the Alt Key, type &lt;i&gt;eval-buffer&lt;/i&gt; and press Enter
+Now you must have an easier and more enjoyable environment.
+&lt;/p&gt;
+
+&lt;p&gt;
+Para fazer suas alterações executarem, pressione &lt;code&gt;M-x&lt;/code&gt;, onde M é uma anotação para a tecla Alt, após isso digite &lt;i&gt;eval-buffer&lt;/i&gt; e pressione Enter.
+Agora você possui um editor mais limpo e agradavel.
+&lt;img src="http://framatis.com/blog/images/emacs-little-config.png" alt="nil"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org343059c" class="outline-3"&gt;
+&lt;h3 id="org343059c"&gt;Setting use-package&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org343059c"&gt;
+&lt;p&gt;
+You remember I said that emacs has a &lt;b&gt;huge&lt;/b&gt; amount of packages? Handle installation of all this packages it's madness, so to make our lifes easier let's setup &lt;i&gt;use-package&lt;/i&gt;, use-package it's basically a package to help you install packages, &lt;b&gt;yeah, emacs is incredible&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Write this in your &lt;code&gt;init.el&lt;/code&gt;
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt; &lt;span class="ss"&gt;'package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;package-enable-at-startup&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;; dont do it immediately&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;package-archives&lt;/span&gt; &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"org"&lt;/span&gt;       &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"http://orgmode.org/elpa/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"gnu"&lt;/span&gt;       &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"http://elpa.gnu.org/packages/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"melpa"&lt;/span&gt;     &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"https://melpa.org/packages/"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;package-initialize&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+   &lt;span class="c1"&gt;;; Bootstrap use-package&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;unless&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;package-installed-p&lt;/span&gt; &lt;span class="ss"&gt;'use-package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;package-refresh-contents&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;; update archives&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;package-install&lt;/span&gt; &lt;span class="ss"&gt;'use-package&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;; grab the newest use-package&lt;/span&gt;
+
+   &lt;span class="c1"&gt;;; Define packages&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt; &lt;span class="ss"&gt;'use-package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+   &lt;span class="c1"&gt;;; Always download if not available&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;use-package-always-ensure&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Congrats! Now let's install the packages that you need for a beautiful experience
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org7680b86" class="outline-3"&gt;
+&lt;h3 id="org7680b86"&gt;First theme&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7680b86"&gt;
+&lt;p&gt;
+Let's install the darcula theme to make you feel like you're on IntelliJ
+&lt;/p&gt;
+
+&lt;p&gt;
+We'll use &lt;code&gt;use-package&lt;/code&gt; to install our theme and the function &lt;code&gt;load-theme&lt;/code&gt; to apply that.
+Write this in your &lt;code&gt;init.el&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;idea-darkula-theme&lt;/span&gt;
+     &lt;span class="nv"&gt;:config&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;load-theme&lt;/span&gt; &lt;span class="ss"&gt;'idea-darkula&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Beautiful editor! &lt;img src="http://framatis.com/blog/images/emacs-darcula.png" alt="nil"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org16d02ee" class="outline-3"&gt;
+&lt;h3 id="org16d02ee"&gt;Useful package for beginners and advanced&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org16d02ee"&gt;
+&lt;p&gt;
+There's a package called &lt;code&gt;which-key&lt;/code&gt; that helps a &lt;b&gt;lot&lt;/b&gt; to memorize emacs keybindings as you go, basically it provide a minibuffer showing you the options for you initial key press.
+&lt;/p&gt;
+
+&lt;p&gt;
+Talk is cheap, I'll show you the code and give images to the functionalitty.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;which-key&lt;/span&gt;
+     &lt;span class="nv"&gt;:init&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;which-key-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="nv"&gt;:config&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;which-key-setup-side-window-bottom&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;which-key-sort-order&lt;/span&gt; &lt;span class="ss"&gt;'which-key-key-order-alpha&lt;/span&gt;
+       &lt;span class="nv"&gt;which-key-side-window-max-width&lt;/span&gt; &lt;span class="mf"&gt;0.33&lt;/span&gt;
+       &lt;span class="nv"&gt;which-key-idle-delay&lt;/span&gt; &lt;span class="mf"&gt;0.7&lt;/span&gt;
+       &lt;span class="nv"&gt;which-key-idle-secondary-delay&lt;/span&gt; &lt;span class="mf"&gt;0.35&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="nv"&gt;:diminish&lt;/span&gt; &lt;span class="nv"&gt;which-key-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Tell me, it's pretty cool and useful right? You'll love as more you use, trust me.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="http://framatis.com/blog/images/emacs-whichkey.png" alt="nil"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org5782a80" class="outline-2"&gt;
+&lt;h2 id="org5782a80"&gt;Java Setup&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5782a80"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgfa37ab5" class="outline-3"&gt;
+&lt;h3 id="orgfa37ab5"&gt;AutoCompletion, Code Action, ….&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfa37ab5"&gt;
+&lt;p&gt;
+Finally let's step by step configuring our basic java usage. The main package it's lsp-mode and all the other packages work surround it's functionality.
+&lt;/p&gt;
+
+&lt;p&gt;
+Write this in your &lt;code&gt;init.el&lt;/code&gt;, it's basically the installation and setting a keybind to all language specific features
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;lsp-mode&lt;/span&gt;
+   &lt;span class="nv"&gt;:ensure&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+   &lt;span class="nv"&gt;:init&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;lsp-keymap-prefix&lt;/span&gt; &lt;span class="s"&gt;"C-c l"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="nv"&gt;:hook&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;java-mode&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;lsp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;lsp-mode&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;lsp-enable-which-key-integration&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+   &lt;span class="nv"&gt;:commands&lt;/span&gt; &lt;span class="nv"&gt;lsp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Now we need two packages to handle autocompletion part.
+First &lt;code&gt;company-mode&lt;/code&gt;
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;company&lt;/span&gt;
+     &lt;span class="nv"&gt;:init&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;company-dabbrev-downcase&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;company-idle-delay&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;company-selection-wrap-around&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;company-tng-configure-default&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="nv"&gt;:config&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-company-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+And second, an lsp integration with company
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;company-lsp&lt;/span&gt;
+     &lt;span class="nv"&gt;:ensure&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+     &lt;span class="nv"&gt;:after&lt;/span&gt; &lt;span class="nv"&gt;lsp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We're close to configure all :D, it's only missing two packages.
+&lt;/p&gt;
+
+&lt;p&gt;
+This package give us the code actions in a nice popup menu like IDEs, we'll install it and set the keybind &lt;code&gt;M-RET&lt;/code&gt; to trigget the popup menu of code actions, M stands for Alt and RET for Enter
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;lsp-ui&lt;/span&gt;
+     &lt;span class="nv"&gt;:ensure&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+     &lt;span class="nv"&gt;:config&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;lsp-prefer-flymake&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt;
+       &lt;span class="nv"&gt;lsp-ui-doc-delay&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt;
+       &lt;span class="nv"&gt;lsp-ui-sideline-enable&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt;
+       &lt;span class="nv"&gt;lsp-ui-sideline-show-symbol&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt; &lt;span class="s"&gt;"M-RET"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;'lsp-execute-code-action&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Finally we'll install &lt;code&gt;lsp-java&lt;/code&gt;, a integration with lsp-mode for java(remember lsp-mode work with a lot of languages, that's why we need to install specific package like lsp-java)
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;lsp-java&lt;/span&gt;
+     &lt;span class="nv"&gt;:ensure&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+     &lt;span class="nv"&gt;:init&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;lsp-java-vmargs&lt;/span&gt;
+       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;list&lt;/span&gt;
+	&lt;span class="s"&gt;"-noverify"&lt;/span&gt;
+	&lt;span class="s"&gt;"-Xmx2G"&lt;/span&gt;
+	&lt;span class="s"&gt;"-XX:+UseG1GC"&lt;/span&gt;
+	&lt;span class="s"&gt;"-XX:+UseStringDeduplication"&lt;/span&gt;
+	&lt;span class="s"&gt;"-javaagent:/home/cherry/development/lombok.jar"&lt;/span&gt;
+	&lt;span class="p"&gt;)&lt;/span&gt;
+
+       &lt;span class="nv"&gt;lsp-java-save-action-organize-imports&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt;
+
+       &lt;span class="nv"&gt;lsp-java-java-path&lt;/span&gt; &lt;span class="s"&gt;"/usr/bin/java"&lt;/span&gt;
+       &lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="nv"&gt;:config&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'java-mode-hook&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="ss"&gt;'lsp&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This is the only package you need to provide your informations, on the sentence &lt;b&gt;-javaagent&lt;/b&gt; you need to provide the location of your lombok jar, if you don't have just install on this link: &lt;a href="https://projectlombok.org/download"&gt;https://projectlombok.org/download&lt;/a&gt;
+And for the variable &lt;b&gt;lsp-java-java-path&lt;/b&gt; you put the location for java binary in your system, you can discover this running on your terminal:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   whereis java
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+java: /usr/bin/java /usr/share/java /usr/share/man/man1/java.1.gz
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+In this output you copy the &lt;i&gt;&lt;i&gt;/usr/bin&lt;/i&gt;&lt;/i&gt; stuff
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org57ddd09" class="outline-3"&gt;
+&lt;h3 id="org57ddd09"&gt;Optional debugger&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org57ddd09"&gt;
+&lt;p&gt;
+I personally don't use the debugger a lot(javascript developer addiction), but I know a lot of senior java developer like this function, so to get you covered let's install a debugger package
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;dap-mode&lt;/span&gt;
+      &lt;span class="nv"&gt;:ensure&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+      &lt;span class="nv"&gt;:after&lt;/span&gt; &lt;span class="nv"&gt;lsp-mode&lt;/span&gt;
+      &lt;span class="nv"&gt;:config&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;dap-mode&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;dap-ui-mode&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;dap-tooltip-mode&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;tooltip-mode&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;dap-register-debug-template&lt;/span&gt;
+   &lt;span class="s"&gt;"localhost:5005"&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list &lt;/span&gt;&lt;span class="nv"&gt;:type&lt;/span&gt; &lt;span class="s"&gt;"java"&lt;/span&gt;
+	 &lt;span class="nv"&gt;:request&lt;/span&gt; &lt;span class="s"&gt;"attach"&lt;/span&gt;
+	 &lt;span class="nv"&gt;:hostName&lt;/span&gt; &lt;span class="s"&gt;"localhost"&lt;/span&gt;
+	 &lt;span class="nv"&gt;:port&lt;/span&gt; &lt;span class="mi"&gt;5005&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;dap-register-debug-template&lt;/span&gt;
+   &lt;span class="s"&gt;"10.186.38.171:5005"&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list &lt;/span&gt;&lt;span class="nv"&gt;:type&lt;/span&gt; &lt;span class="s"&gt;"java"&lt;/span&gt;
+	 &lt;span class="nv"&gt;:request&lt;/span&gt; &lt;span class="s"&gt;"attach"&lt;/span&gt;
+	 &lt;span class="nv"&gt;:hostName&lt;/span&gt; &lt;span class="s"&gt;"10.186.38.171"&lt;/span&gt;
+	 &lt;span class="nv"&gt;:port&lt;/span&gt; &lt;span class="mi"&gt;5005&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+And the specific package for java
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;dap-java&lt;/span&gt;
+     &lt;span class="nv"&gt;:ensure&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt;
+     &lt;span class="nv"&gt;:after&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;lsp-java&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="nv"&gt;:config&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;f7&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;'dap-step-in&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;f8&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;'dap-next&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;f9&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;'dap-continue&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org247fb76" class="outline-3"&gt;
+&lt;h3 id="org247fb76"&gt;File Tree vision&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org247fb76"&gt;
+&lt;p&gt;
+&lt;code&gt;Treemacs&lt;/code&gt; is an wonderful package that provide a file list view(like IDEs) and also integrates beautifully with lsp-mode to list packages and functions like Eclipse, let's install it
+&lt;/p&gt;
+
+&lt;p&gt;
+In this piece of code, we're installing the package &lt;code&gt;treemacs&lt;/code&gt; and binding it's toggle to the key &lt;code&gt;f8&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;treemacs&lt;/span&gt;
+     &lt;span class="nv"&gt;:init&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'treemacs-mode-hook&lt;/span&gt;
+       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;treemacs-resize-icons&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+     &lt;span class="nv"&gt;:config&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;f8&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ss"&gt;'treemacs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org65a2ae1" class="outline-3"&gt;
+&lt;h3 id="org65a2ae1"&gt;Project management&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org65a2ae1"&gt;
+&lt;p&gt;
+   One thing that I love about emacs it's how fast you can move between different projects and fuzzy find files inside the project you working on, the package that do this is called &lt;code&gt;projectile&lt;/code&gt;
+let's install it and configure
+&lt;/p&gt;
+
+
+&lt;p&gt;
+In this piece, we're basically installing the package &lt;code&gt;projectile&lt;/code&gt; and binding the function to switch between projects to &lt;code&gt;C-c p&lt;/code&gt; and the function to search files inside projects to &lt;code&gt;C-.&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;projectile&lt;/span&gt;
+    &lt;span class="nv"&gt;:defer&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="nv"&gt;:init&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;projectile-completion-system&lt;/span&gt; &lt;span class="ss"&gt;'ivy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;projectile-mode&lt;/span&gt; &lt;span class="nv"&gt;+1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;:bind&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"C-c p"&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;projectile-command-map&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"C-."&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;projectile-find-file&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgbb601e5" class="outline-2"&gt;
+&lt;h2 id="orgbb601e5"&gt;Finish&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbb601e5"&gt;
+&lt;p&gt;
+Well, that's the basic setup you need to simulate an entire experience similar to other IDEs like IntelliJ and Eclipse. Obviously I can't show you all that emacs can do and even what lsp-mode can do, so i'll provide links for resources and please contact me for help, will be a pleasure talk with you about emacs!
+&lt;/p&gt;
+
+&lt;p&gt;
+Email for contact: me@framatis.com
+&lt;/p&gt;
+
+&lt;p&gt;
+Lsp-mode documentation: &lt;a href="https://emacs-lsp.github.io/lsp-mode/"&gt;https://emacs-lsp.github.io/lsp-mode/&lt;/a&gt;
+Lsp-java section of documentation: &lt;a href="https://emacs-lsp.github.io/lsp-java/"&gt;https://emacs-lsp.github.io/lsp-java/&lt;/a&gt;
+Video demonstration of this "stack" on emacs conf: &lt;a href="https://www.youtube.com/watch?v=Bbjxn9yVNJ8"&gt;https://www.youtube.com/watch?v=Bbjxn9yVNJ8&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><guid>http://framatis.com/blog/posts/pt_br/emacs-as-a-java-ide/</guid><pubDate>Tue, 21 Jul 2020 19:46:48 GMT</pubDate></item></channel></rss>
